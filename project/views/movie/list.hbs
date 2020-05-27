@@ -1,0 +1,24 @@
+<h3><a class="btn btn-secondary" href="/movie"> Create New</a> Movie List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Image Link</th>
+            <th>Summary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td><a href="">{{this.image}}</a></td>
+            <td>{{this.summary}}</td>
+            <td>
+                <a href="/movie/{{this._id}}"><h4 style="font-size: large">Edit</h4></a>
+                <a href="/movie/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><h4 style="font-size: large">Delete</h4></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
